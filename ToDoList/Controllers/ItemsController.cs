@@ -6,6 +6,7 @@ namespace ToDoList.Controllers
 {
   public class ItemsController : Controller
   {
+
     [HttpGet("/items")]
     public ActionResult Index()
     {
@@ -26,11 +27,12 @@ namespace ToDoList.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpPost("/items/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Item.ClearAll();
-    //   return View();
-    // }
+    [HttpPost("/items/delete")]
+    public ActionResult DeleteAll()
+    {
+        Item.ClearAll();
+        return View();
+    }
+
   }
 }

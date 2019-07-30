@@ -1,20 +1,25 @@
-@using ToDoList.Models ;
-<h1>Items List</h1>
+@using ToDoList.Models;
+
+<h1>To Do List</h1>
+<!-- Adding Items -->
+@if(Model.Count == 0)
+{
+  <p>There are no items in the list!</p>
+}
 <ul>
+  @foreach(Item item in Model)
+  {
+    <li>
+      @item.Description
+    </li>
+  }
 
-@if (Model.Count == 0)
-{
-  <p>You have nothing to do in your list!</p>
-}
-@if(@Model.Count != 0)
-{
-  @foreach (Item item in Model)
-{
-  <li>@item.GetDescription()  </li>
-}
-}
+</ul>
+<a href="/items/new"> Add a new Item.</a>
 
+<!-- deleting items -->
+<form action="/items/delete" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>
 
-</ul>L
-<a href="/items/new">Add a new item.</a>
 
