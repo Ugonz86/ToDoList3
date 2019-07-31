@@ -2,7 +2,7 @@
 
 #### _DESCRIPTION - BUILD DATE_
 
-#### _By **Na Hyung Choi**_
+#### _By **Uriel Gonzalez**_
 
 ## Description
 
@@ -32,10 +32,10 @@ DETAILED DESCRIPTION
 
 ## Support and contact details
 
-_Please contact Na Hyung with questions and comments._
+_Please contact Uriel Gonzalez with questions and comments._
 
 ### License
 
 *GNU GPLv3*
 
-Copyright (c) 2019 **_Na Hyung Choi_**
+Copyright (c) 2019 **_Uriel Gonzalez_**
