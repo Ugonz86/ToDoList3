@@ -7,7 +7,6 @@ namespace ToDoList.Controllers
 {
   public class CategoriesController : Controller
   {
-
     [HttpGet("/categories")]
     public ActionResult Index()
     {
@@ -52,6 +51,5 @@ namespace ToDoList.Controllers
       model.Add("category", foundCategory);
       return View("Show", model);
     }
-
   }
 }
