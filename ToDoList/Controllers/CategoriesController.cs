@@ -59,7 +59,6 @@ namespace ToDoList.Controllers
       var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
       return View(thisCategory);
     }
-
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
@@ -68,5 +67,30 @@ namespace ToDoList.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+
+
+    public ActionResult DeleteAll()
+    {
+      var allCategories = _db.Categories.ToList();
+      return View();
+    }
+
+    [HttpPost, ActionName("DeleteAll")]
+    public ActionResult DeleteAllConfirmed()
+    {
+      var allCategories = _db.Categories.ToList();
+
+      foreach (var category in allCategories)
+      {
+      _db.Categories.Remove(category);
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+
+
+      }
+
+
   }
 }
