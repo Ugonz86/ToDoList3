@@ -8,7 +8,6 @@ namespace ToDoList.Controllers
 {
   public class CategoriesController : Controller
   {
-<<<<<<< HEAD
     private readonly ToDoListContext _db;
 
     public CategoriesController(ToDoListContext db)
@@ -16,9 +15,6 @@ namespace ToDoList.Controllers
       _db = db;
     }
 
-=======
-    [HttpGet("/categories")]
->>>>>>> bc97877db3d1f25e8851bff708f1363bcf281e62
     public ActionResult Index()
     {
       List<Category> model = _db.Categories.ToList();
@@ -50,7 +46,6 @@ namespace ToDoList.Controllers
       return View(thisCategory);
     }
 
-<<<<<<< HEAD
     [HttpPost]
     public ActionResult Edit(Category category)
     {
@@ -73,17 +68,5 @@ namespace ToDoList.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-=======
-    [HttpPost("/categories/{categoryId}/items/delete")]
-    public ActionResult Delete(int categoryId)
-    {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory = Category.Find(categoryId);
-      List<Item> categoryItems = selectedCategory.Items;
-      Item.ClearAll();
-      return View("Show", model);
-    }
-
->>>>>>> bc97877db3d1f25e8851bff708f1363bcf281e62
   }
 }
