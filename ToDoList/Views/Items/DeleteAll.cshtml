@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+
+@model List<ToDoList.Models.Item>;
+
+<h2>Are you sure you want to delete all items?</h2>
+<br>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="DeleteAll" />
+}
+
+<br>
+<br>
+@Html.ActionLink("Back to items", "Index")

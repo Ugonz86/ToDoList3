@@ -71,5 +71,24 @@ namespace ToDoList.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult DeleteAll()
+        {
+            var allItems = _db.Items.ToList();
+            return View();
+        }
+
+        [HttpPost, ActionName("DeleteAll")]
+            public ActionResult DeleteAllConfirmed()
+        {
+            var allItems = _db.Items.ToList();
+
+        foreach (var item in allItems)
+        {
+            _db.Items.Remove(item);
+        }
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

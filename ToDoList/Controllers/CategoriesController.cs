@@ -68,8 +68,6 @@ namespace ToDoList.Controllers
       return RedirectToAction("Index");
     }
 
-
-
     public ActionResult DeleteAll()
     {
       var allCategories = _db.Categories.ToList();
@@ -87,10 +85,6 @@ namespace ToDoList.Controllers
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
-
-
-      }
-
-
+    }
   }
 }

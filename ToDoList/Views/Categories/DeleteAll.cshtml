@@ -2,20 +2,16 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Category
+@model List<ToDoList.Models.Category>;
 
 <h2>Are you sure you want to delete all categories?</h2>
 <br>
 
-
-
-
-
-
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
 @using (Html.BeginForm())
 {
     <input type="submit" value="DeleteAll" />
 }
+
+<br>
 <br>
 @Html.ActionLink("Back to categories", "Index")
