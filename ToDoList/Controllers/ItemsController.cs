@@ -7,15 +7,27 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ToDoList.Controllers
 {
+<<<<<<< HEAD
     public class ItemsController : Controller
     {
         private readonly ToDoListContext _db;
+=======
+  public class ItemsController : Controller
+  {
+    [HttpGet("/categories/{categoryId}/items/new")]
+    public ActionResult New(int categoryId)
+    {
+      Category category = Category.Find(categoryId);
+      return View(category);
+    }
+>>>>>>> bc97877db3d1f25e8851bff708f1363bcf281e62
 
         public ItemsController(ToDoListContext db)
         {
             _db = db;
         }
 
+<<<<<<< HEAD
         public ActionResult Index()
         {
             List<Item> model = _db.Items.Include(items => items.Category).ToList();
@@ -73,3 +85,14 @@ namespace ToDoList.Controllers
         }
     }
 }
+=======
+    // // This will be helpful later
+    // [HttpPost("/items/delete")]
+    // public ActionResult DeleteAll()
+    // {
+    //   Item.ClearAll();
+    //   return View();
+    // }
+  }
+}
+>>>>>>> bc97877db3d1f25e8851bff708f1363bcf281e62

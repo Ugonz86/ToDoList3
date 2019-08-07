@@ -2,15 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ToDoList.Controllers
 {
-    public class HomeController : Controller
-    {
+  public class HomeController : Controller
+  {
 
-      [HttpGet("/")]
-      public ActionResult Index()
-      {
-        return View();
-      }
-
+<<<<<<< HEAD
       [HttpGet("/favorite_photos")]
       public ActionResult FavoritePhotos()
       {
@@ -19,3 +14,13 @@ namespace ToDoList.Controllers
 
     }
 }
+=======
+    [HttpGet("/")]
+    public ActionResult Index()
+    {
+      return View();
+    }
+
+  }
+}
+>>>>>>> bc97877db3d1f25e8851bff708f1363bcf281e62
